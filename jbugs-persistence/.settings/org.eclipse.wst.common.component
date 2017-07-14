@@ -5,6 +5,8 @@
         <wb-resource deploy-path="/" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/" source-path="/src/test/java"/>
         <wb-resource deploy-path="/" source-path="/src/test/resources"/>
+        <property name="ClientJARURI" value="jbugs-client.jar"/>
+        <property name="ClientProject" value="jbugs-client"/>
         <property name="java-output-path" value="/jbugs-persistence/target/classes"/>
     </wb-module>
 </project-modules>

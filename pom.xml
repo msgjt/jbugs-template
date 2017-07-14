@@ -16,12 +16,6 @@
   	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>edu.msg.jbugs</groupId>
-				<artifactId>jbugs-business</artifactId>
-				<version>${project.version}</version>
-				<type>ejb</type>
-			</dependency>
-			<dependency>
 				<groupId>javax</groupId>
 				<artifactId>javaee-api</artifactId>
 				<version>7.0</version>

@@ -1,5 +1,5 @@
-T:\10_CODE\jbugs_template\jbugs-persistence\src\main\java\ro\msg\edu\jbugs\entities\Permission.java
-T:\10_CODE\jbugs_template\jbugs-persistence\src\main\java\ro\msg\edu\jbugs\business\UserServiceRemote.java
-T:\10_CODE\jbugs_template\jbugs-persistence\src\main\java\ro\msg\edu\jbugs\entities\User.java
-T:\10_CODE\jbugs_template\jbugs-persistence\src\main\java\ro\msg\edu\jbugs\business\impl\UserService.java
-T:\10_CODE\jbugs_template\jbugs-persistence\src\main\java\ro\msg\edu\jbugs\entities\Role.java
+T:\10_CODE\jbugs_template\jbugs-persistence\src\main\java\entities\Permission.java
+T:\10_CODE\jbugs_template\jbugs-persistence\src\main\java\entities\User.java
+T:\10_CODE\jbugs_template\jbugs-persistence\src\main\java\dao\UserManagement.java
+T:\10_CODE\jbugs_template\jbugs-persistence\src\main\java\dao\UserManagementImpl.java
+T:\10_CODE\jbugs_template\jbugs-persistence\src\main\java\entities\Role.java
