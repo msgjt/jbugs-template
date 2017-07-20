@@ -10,6 +10,7 @@
 	<name>JBugs Client</name>
 	<description>Client layer</description>
 	<packaging>war</packaging>
+	
 	<dependencies>
 		<dependency>
 			<groupId>javax</groupId>
@@ -18,16 +19,17 @@
 		<dependency>
 			<groupId>edu.msg.ro</groupId>
 			<artifactId>jbugs-business</artifactId>
-			<type>ejb-client</type>
+			<type>ejb</type>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
+	
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>				
 			</plugin>
-		</plugins>
+		</plugins>		
 	</build>
 </project>

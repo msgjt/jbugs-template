@@ -2,6 +2,8 @@ package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -10,13 +12,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ejb.SecondComponent;
+import dto.UserDTO;
+import ejb.UserService;
 
 @WebServlet(urlPatterns = { "/TestServlet" })
 public class TestServlet extends HttpServlet {
 
 	@EJB
-	private SecondComponent someEjb;
+	private UserService userService;
 
 	/**
 	 * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,17 +34,27 @@ public class TestServlet extends HttpServlet {
 	 * @throws IOException
 	 *             if an I/O error occurs
 	 */
-	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+	protected void processRequest(final HttpServletRequest request, final HttpServletResponse response)
 			throws ServletException, IOException {
+
+		final String firstName = "John_" + LocalDateTime.now();
+		userService.saveNewUser(firstName, "Doe");
+
+		final List<UserDTO> doeUsers = userService.getUserByLastName("Doe");
+
 		response.setContentType("text/html;charset=UTF-8");
 		try (PrintWriter out = response.getWriter()) {
 			out.println("<!DOCTYPE html>");
 			out.println("<html>");
 			out.println("<head>");
-			out.println("<title>Test EJB Bean</title>");
+			out.println("<title>Test EJB Bean New</title>");
 			out.println("</head>");
 			out.println("<body>");
-			out.println(someEjb.doMagic() + "gfhgfhg<br>");
+			out.println("User with lastname  'Doe' are:<br>");
+			for (final UserDTO user : doeUsers) {
+				out.println(user.toString() + "<br>");
+			}
+
 			out.println("</body>");
 			out.println("</html>");
 		}
@@ -62,7 +75,7 @@ public class TestServlet extends HttpServlet {
 	 *             if an I/O error occurs
 	 */
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	protected void doGet(final HttpServletRequest request, final HttpServletResponse response)
 			throws ServletException, IOException {
 		processRequest(request, response);
 	}
@@ -80,7 +93,7 @@ public class TestServlet extends HttpServlet {
 	 *             if an I/O error occurs
 	 */
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	protected void doPost(final HttpServletRequest request, final HttpServletResponse response)
 			throws ServletException, IOException {
 		processRequest(request, response);
 	}

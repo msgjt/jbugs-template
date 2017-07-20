@@ -1,28 +1,23 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>edu.msg.ro</groupId>
-    <artifactId>jbugs</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-  </parent>
-  <artifactId>jbugs-ear</artifactId>
-  <packaging>ear</packaging>
-  <name>EAR PRoject</name>
-  <dependencies>
-  	<dependency>
-  		<groupId>edu.msg.ro</groupId>
-  		<artifactId>jbugs-client</artifactId>
-  		<type>war</type>
-  		<version>${project.version}</version>
-  	</dependency>
-  	<dependency>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>edu.msg.ro</groupId>
+		<artifactId>jbugs</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>jbugs-ear</artifactId>
+	<packaging>ear</packaging>
+	<name>EAR PRoject</name>
+	<dependencies>
+		<dependency>
 			<groupId>edu.msg.ro</groupId>
-			<artifactId>jbugs-business</artifactId>
-			<type>ejb</type>
+			<artifactId>jbugs-client</artifactId>
+			<type>war</type>
 			<version>${project.version}</version>
-	</dependency>
-  </dependencies>
-  <build>
+		</dependency>
+	</dependencies>
+	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -30,17 +25,13 @@
 				<configuration>
 					<version>7</version>
 					<defaultLibBundleDir>lib</defaultLibBundleDir>
+					<fileNameMapping>no-version</fileNameMapping>
 					<modules>
 						<webModule>
 							<groupId>edu.msg.ro</groupId>
 							<artifactId>jbugs-client</artifactId>
 							<contextRoot>jbugs</contextRoot>
 						</webModule>
-						<ejbModule>
-							<groupId>edu.msg.ro</groupId>
-							<artifactId>jbugs-business</artifactId>
-							<bundleFileName>jbugs-business-${project.version}.jar</bundleFileName>
-						</ejbModule>
 					</modules>
 				</configuration>
 			</plugin>

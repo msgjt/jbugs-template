@@ -1,5 +1,4 @@
-T:\10_CODE\TEMPLATE\jbugs-template\jbugs-persistence\src\main\java\dao\UserManagement.java
-T:\10_CODE\TEMPLATE\jbugs-template\jbugs-persistence\src\main\java\entities\Permission.java
-T:\10_CODE\TEMPLATE\jbugs-template\jbugs-persistence\src\main\java\entities\User.java
-T:\10_CODE\TEMPLATE\jbugs-template\jbugs-persistence\src\main\java\entities\Role.java
-T:\10_CODE\TEMPLATE\jbugs-template\jbugs-persistence\src\main\java\dao\UserManagementImpl.java
+T:\10_CODE\final_stand\jbugs-template\jbugs-persistence\src\main\java\entities\Permission.java
+T:\10_CODE\final_stand\jbugs-template\jbugs-persistence\src\main\java\entities\User.java
+T:\10_CODE\final_stand\jbugs-template\jbugs-persistence\src\main\java\entities\Role.java
+T:\10_CODE\final_stand\jbugs-template\jbugs-persistence\src\main\java\dao\UserDao.java

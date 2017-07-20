@@ -11,15 +11,17 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQuery;
 
+@NamedQuery(name = User.FIND_USER_BY_LASTNAME, query = "SELECT u from User u WHERE u.lastName = :lastName")
 @Entity
 public class User implements Serializable {
 
 	public User() {
 	};
 
-	public User(String firstName, String lastName, String phoneNumber, String email, String username, String password,
-			boolean activ) {
+	public User(final String firstName, final String lastName, final String phoneNumber, final String email,
+			final String username, final String password, final boolean activ) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -31,6 +33,9 @@ public class User implements Serializable {
 	}
 
 	private static final long serialVersionUID = 1L;
+
+	public static final String FIND_USER_BY_LASTNAME = "User.findUserByLastName";
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idUser")
@@ -60,7 +65,7 @@ public class User implements Serializable {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(final int id) {
 		this.id = id;
 	}
 
@@ -68,7 +73,7 @@ public class User implements Serializable {
 		return firstName;
 	}
 
-	public void setFirstName(String firstName) {
+	public void setFirstName(final String firstName) {
 		this.firstName = firstName;
 	}
 
@@ -76,7 +81,7 @@ public class User implements Serializable {
 		return lastName;
 	}
 
-	public void setLastName(String lastName) {
+	public void setLastName(final String lastName) {
 		this.lastName = lastName;
 	}
 
@@ -84,7 +89,7 @@ public class User implements Serializable {
 		return phoneNumber;
 	}
 
-	public void setPhoneNumber(String phoneNumber) {
+	public void setPhoneNumber(final String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
@@ -92,7 +97,7 @@ public class User implements Serializable {
 		return email;
 	}
 
-	public void setEmail(String email) {
+	public void setEmail(final String email) {
 		this.email = email;
 	}
 
@@ -100,7 +105,7 @@ public class User implements Serializable {
 		return username;
 	}
 
-	public void setUsername(String username) {
+	public void setUsername(final String username) {
 		this.username = username;
 	}
 
@@ -108,7 +113,7 @@ public class User implements Serializable {
 		return password;
 	}
 
-	public void setPassword(String password) {
+	public void setPassword(final String password) {
 		this.password = password;
 	}
 
@@ -116,7 +121,7 @@ public class User implements Serializable {
 		return activ;
 	}
 
-	public void setActiv(boolean activ) {
+	public void setActiv(final boolean activ) {
 		this.activ = activ;
 	}
 
@@ -124,7 +129,13 @@ public class User implements Serializable {
 		return roles;
 	}
 
-	public void setRoles(List<Role> roles) {
+	public void setRoles(final List<Role> roles) {
 		this.roles = roles;
 	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + "]";
+	}
+
 }

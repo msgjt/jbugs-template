@@ -2,10 +2,7 @@
     <wb-module deploy-name="jbugs-ear-1.0.0-SNAPSHOT">
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/ear-resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/application" tag="defaultRootSource"/>
-        <dependent-module archiveName="jbugs-client-1.0.0-SNAPSHOT.war" deploy-path="/" handle="module:/resource/jbugs-client/jbugs-client">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="jbugs-business-1.0.0-SNAPSHOT.jar" deploy-path="/" handle="module:/resource/jbugs-business/jbugs-business">
+        <dependent-module archiveName="jbugs-client.war" deploy-path="/" handle="module:/resource/jbugs-client/jbugs-client">
             <dependency-type>uses</dependency-type>
         </dependent-module>
     </wb-module>

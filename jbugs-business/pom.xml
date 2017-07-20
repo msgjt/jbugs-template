@@ -10,6 +10,7 @@
 	<name>JBugs Business</name>
 	<description>Business layer</description>
 	<packaging>ejb</packaging>
+
 	<dependencies>
 		<dependency>
 			<groupId>javax</groupId>
@@ -18,11 +19,10 @@
 		<dependency>
 			<groupId>edu.msg.ro</groupId>
 			<artifactId>jbugs-persistence</artifactId>
-			<type>ejb-client</type>
 			<version>${project.version}</version>
-			<scope>provided</scope>
 		</dependency>
 	</dependencies>
+	
 	<build>
 		<plugins>
 			<plugin>
