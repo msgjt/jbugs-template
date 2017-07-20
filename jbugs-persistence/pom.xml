@@ -11,11 +11,4 @@
 	<description>Persistence layer</description>
 	<packaging>jar</packaging>
 	
-	<dependencies>
-		<dependency>
-			<groupId>javax</groupId>
-			<artifactId>javaee-api</artifactId>
-		</dependency>
-	</dependencies>	
-	
 </project>

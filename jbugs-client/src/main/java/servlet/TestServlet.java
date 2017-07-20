@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dto.UserDTO;
-import ejb.UserService;
+import edu.msg.ro.business.user.dto.UserDTO;
+import edu.msg.ro.business.user.service.UserService;
 
 @WebServlet(urlPatterns = { "/TestServlet" })
 public class TestServlet extends HttpServlet {

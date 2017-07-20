@@ -1,8 +1,8 @@
-package dto.mapper;
+package edu.msg.ro.business.user.dto.mapper;
 
 import javax.ejb.Stateless;
 
-import dto.UserDTO;
+import edu.msg.ro.business.user.dto.UserDTO;
 import entities.User;
 
 @Stateless

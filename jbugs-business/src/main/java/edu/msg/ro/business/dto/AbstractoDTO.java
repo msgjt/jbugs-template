@@ -1,4 +1,4 @@
-package dto;
+package edu.msg.ro.business.dto;
 
 public abstract class AbstractoDTO {
 
