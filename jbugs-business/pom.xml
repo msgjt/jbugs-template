@@ -18,15 +18,19 @@
 		<dependency>
 			<groupId>edu.msg.ro</groupId>
 			<artifactId>jbugs-persistence</artifactId>
-			<type>jar</type>
+			<type>ejb-client</type>
 			<version>${project.version}</version>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-ejb-plugin</artifactId>				
+				<artifactId>maven-ejb-plugin</artifactId>
+				<configuration>
+					<ejbVersion>3.2</ejbVersion>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

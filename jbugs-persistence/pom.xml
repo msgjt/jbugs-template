@@ -9,7 +9,7 @@
 	<artifactId>jbugs-persistence</artifactId>
 	<name>JBugs Persistence</name>
 	<description>Persistence layer</description>
-	<packaging>jar</packaging>
+	<packaging>ejb</packaging>
 	<dependencies>
 		<dependency>
 			<groupId>javax</groupId>
@@ -17,15 +17,14 @@
 		</dependency>
 	</dependencies>
 	<build>
-  <plugins>
-    <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-ejb-plugin</artifactId>
-        <configuration>
-            <ejbVersion>3.1</ejbVersion>
-            <generateClient>true</generateClient>
-        </configuration>
-    </plugin>
-  </plugins>
-</build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ejb-plugin</artifactId>
+				<configuration>
+					<ejbVersion>3.2</ejbVersion>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>

@@ -5,5 +5,8 @@
         <dependent-module archiveName="jbugs-client-1.0.0-SNAPSHOT.war" deploy-path="/" handle="module:/resource/jbugs-client/jbugs-client">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="jbugs-business-1.0.0-SNAPSHOT.jar" deploy-path="/" handle="module:/resource/jbugs-business/jbugs-business">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
     </wb-module>
 </project-modules>

@@ -10,6 +10,6 @@ public class SecondComponent {
 	private FirstComponent firstEjb;
 
 	public String doMagic() {
-		return this.firstEjb.doSomething("nice");
+		return this.firstEjb.doSomething("not nice");
 	}
 }

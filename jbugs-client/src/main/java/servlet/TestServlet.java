@@ -41,7 +41,7 @@ public class TestServlet extends HttpServlet {
 			out.println("<title>Test EJB Bean</title>");
 			out.println("</head>");
 			out.println("<body>");
-			out.println(someEjb.doMagic() + "<br>");
+			out.println(someEjb.doMagic() + "gfhgfhg<br>");
 			out.println("</body>");
 			out.println("</html>");
 		}

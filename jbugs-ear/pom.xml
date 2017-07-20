@@ -15,6 +15,12 @@
   		<type>war</type>
   		<version>${project.version}</version>
   	</dependency>
+  	<dependency>
+			<groupId>edu.msg.ro</groupId>
+			<artifactId>jbugs-business</artifactId>
+			<type>ejb</type>
+			<version>${project.version}</version>
+	</dependency>
   </dependencies>
   <build>
 		<plugins>
@@ -23,12 +29,18 @@
 				<artifactId>maven-ear-plugin</artifactId>
 				<configuration>
 					<version>7</version>
+					<defaultLibBundleDir>lib</defaultLibBundleDir>
 					<modules>
 						<webModule>
 							<groupId>edu.msg.ro</groupId>
 							<artifactId>jbugs-client</artifactId>
 							<contextRoot>jbugs</contextRoot>
 						</webModule>
+						<ejbModule>
+							<groupId>edu.msg.ro</groupId>
+							<artifactId>jbugs-business</artifactId>
+							<bundleFileName>jbugs-business-${project.version}.jar</bundleFileName>
+						</ejbModule>
 					</modules>
 				</configuration>
 			</plugin>
