@@ -1,4 +1,4 @@
-package entities;
+package edu.msg.ro.persistence.user.entity;
 
 import java.io.Serializable;
 import java.util.List;

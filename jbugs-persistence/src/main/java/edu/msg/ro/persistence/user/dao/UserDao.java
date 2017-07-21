@@ -1,4 +1,4 @@
-package dao;
+package edu.msg.ro.persistence.user.dao;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
-import entities.User;
+import edu.msg.ro.persistence.user.entity.User;
 
 @Dependent
 public class UserDao {

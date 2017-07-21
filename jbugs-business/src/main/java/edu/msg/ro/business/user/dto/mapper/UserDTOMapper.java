@@ -3,7 +3,7 @@ package edu.msg.ro.business.user.dto.mapper;
 import javax.enterprise.context.Dependent;
 
 import edu.msg.ro.business.user.dto.UserDTO;
-import entities.User;
+import edu.msg.ro.persistence.user.entity.User;
 
 @Dependent
 public class UserDTOMapper {

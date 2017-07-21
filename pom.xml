@@ -136,7 +136,7 @@
 			</modules>
 		</profile>
 
-		<!-- The Arquillian build-->
+		<!-- The Arquillian build -->
 		<profile>
 			<id>payara-remote</id>
 

@@ -6,6 +6,7 @@
 		<artifactId>jbugs</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
+	
 	<artifactId>jbugs-business</artifactId>
 	<name>JBugs Business</name>
 	<description>Business layer</description>
@@ -24,9 +25,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-ejb-plugin</artifactId>
-				<configuration>
-					<ejbVersion>3.2</ejbVersion>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
