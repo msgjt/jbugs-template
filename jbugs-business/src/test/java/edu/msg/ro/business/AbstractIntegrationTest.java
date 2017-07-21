@@ -25,6 +25,8 @@ import org.junit.runner.RunWith;
  * <li>By default the standard jbugs package 'edu.msg.ro' is used as the common
  * parent package for all EJBs. Overwrite {@link #getEjbPackages()} in order to
  * change that.</li>
+ * <li>ddl strategy should be 'drop-and-create'. Change it on your
+ * responsability</li>
  * </ol>
  * 
  * @author Andrei Floricel, msg systems ag

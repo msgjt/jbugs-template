@@ -2,13 +2,13 @@ package edu.msg.ro.business.dto;
 
 public abstract class AbstractoDTO {
 
-	private int id;
+	private Long id;
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

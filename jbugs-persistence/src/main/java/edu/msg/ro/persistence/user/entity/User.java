@@ -1,6 +1,5 @@
 package edu.msg.ro.persistence.user.entity;
 
-import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -15,58 +14,42 @@ import javax.persistence.NamedQuery;
 
 @NamedQuery(name = User.FIND_USER_BY_LASTNAME, query = "SELECT u from User u WHERE u.lastName = :lastName")
 @Entity
-public class User implements Serializable {
-
-	public User() {
-	};
-
-	public User(final String firstName, final String lastName, final String phoneNumber, final String email,
-			final String username, final String password, final boolean activ) {
-		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.phoneNumber = phoneNumber;
-		this.email = email;
-		this.username = username;
-		this.password = password;
-		this.activ = activ;
-	}
-
-	private static final long serialVersionUID = 1L;
+public class User extends AbstractEntity {
 
 	public static final String FIND_USER_BY_LASTNAME = "User.findUserByLastName";
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idUser")
-	private int id;
+	private Long id;
 
 	@Column(nullable = false, length = 50)
 	private String firstName;
+
 	@Column(nullable = false, length = 50)
 	private String lastName;
+
 	@Column(length = 20)
 	private String phoneNumber;
+
 	@Column(unique = true, length = 50)
 	private String email;
+
 	@Column(unique = true, length = 15)
 	private String username;
+
 	@Column(length = 32)
 	private String password;
 
 	@Column(name = "Status")
-	private boolean activ;
+	private boolean active;
 
 	@ManyToMany
-	@JoinTable(name = "USER_ROLE", joinColumns = @JoinColumn(name = "id_user", referencedColumnName = "idUser"), inverseJoinColumns = @JoinColumn(name = "id_role", referencedColumnName = "idRole"))
+	@JoinTable(name = "USER_ROLE", joinColumns = @JoinColumn(name = "id_user", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "id_role", referencedColumnName = "idRole"))
 	private List<Role> roles;
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(final int id) {
-		this.id = id;
+	@Override
+	public Long getId() {
+		return this.id;
 	}
 
 	public String getFirstName() {
@@ -118,11 +101,11 @@ public class User implements Serializable {
 	}
 
 	public boolean isActiv() {
-		return activ;
+		return active;
 	}
 
 	public void setActiv(final boolean activ) {
-		this.activ = activ;
+		this.active = activ;
 	}
 
 	public List<Role> getRoles() {
@@ -135,7 +118,7 @@ public class User implements Serializable {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + "]";
+		return "User [id=" + id + "]";
 	}
 
 }
