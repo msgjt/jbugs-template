@@ -9,6 +9,8 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import edu.msg.ro.business.AbstractIntegrationTest;
+import edu.msg.ro.business.exception.JBugsBusinessException;
+import edu.msg.ro.business.exception.ObjectNotFoundException;
 import edu.msg.ro.business.user.dto.UserDTO;
 import edu.msg.ro.persistence.user.dao.UserDao;
 import edu.msg.ro.persistence.user.entity.User;
@@ -49,7 +51,7 @@ public class UserServiceTest extends AbstractIntegrationTest {
 	}
 
 	@Test
-	public void testDeleteUser() {
+	public void testDeleteUser() throws JBugsBusinessException {
 		// ARRANGE
 		final List<User> userList = userDao.getUserByLastName("Doe");
 		Assert.assertEquals("There should be a user with name 'Doe'!", userList.size(), 1);
@@ -62,6 +64,19 @@ public class UserServiceTest extends AbstractIntegrationTest {
 		final User deletedUser = userDao.findById(userList.get(0).getId());
 		Assert.assertNotNull("Deletion is only logical, not physical!", deletedUser);
 		Assert.assertFalse("User should be deactivated", deletedUser.isActive());
+	}
+
+	@Test(expected = ObjectNotFoundException.class)
+	public void testDeleteUser_throwsObjectNotFoundException() throws JBugsBusinessException {
+		// ARRANGE
+		final User nonExistinguser = userDao.findById(3000L);
+		Assert.assertNull("User should not exist", nonExistinguser);
+
+		// ACT
+		sut.deleteUser(3000L);
+
+		// ASSERT
+		// throws ObjectNotFoundException
 	}
 
 }
