@@ -2,14 +2,14 @@ package edu.msg.ro.persistence.user.dao;
 
 import java.util.List;
 
-import javax.enterprise.context.Dependent;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
 import edu.msg.ro.persistence.user.entity.User;
 
-@Dependent
+@Stateless
 public class UserDao {
 
 	@PersistenceContext(unitName = "jbugs-persistence")

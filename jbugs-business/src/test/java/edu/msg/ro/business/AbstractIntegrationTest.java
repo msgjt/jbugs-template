@@ -22,6 +22,7 @@ import org.junit.runner.RunWith;
  * '{@code payara-remote}', <b>on the parent module</b></li>
  * <li>The payara server has to be manually started before running the
  * integration tests</li>
+ * <li>No application should be deployed!!</li>
  * <li>By default the standard jbugs package 'edu.msg.ro' is used as the common
  * parent package for all EJBs. Overwrite {@link #getEjbPackages()} in order to
  * change that.</li>

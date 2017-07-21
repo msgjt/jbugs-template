@@ -21,14 +21,14 @@ public class UserServiceTest extends AbstractIntegrationTest {
 
 		// ARRANGE
 		List<UserDTO> userList = sut.getUserByLastName(LASTNAME);
-		Assert.assertEquals("No user should exist!", 0, userList.size());
+		Assert.assertEquals("No user should exist!", userList.size(), 0);
 
 		// ACT
 		sut.saveNewUser("John", LASTNAME);
 
 		// ASSERT
 		userList = sut.getUserByLastName(LASTNAME);
-		Assert.assertEquals("Exactly one user should be persisted", 1, userList.size());
+		Assert.assertEquals("Exactly one user should be persisted", userList.size(), 1);
 	}
 
 }

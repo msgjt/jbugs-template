@@ -3,8 +3,8 @@ package edu.msg.ro.business.user.service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.inject.Inject;
 
 import edu.msg.ro.business.user.dto.UserDTO;
 import edu.msg.ro.business.user.dto.mapper.UserDTOMapper;
@@ -14,10 +14,10 @@ import edu.msg.ro.persistence.user.entity.User;
 @Stateless
 public class UserService {
 
-	@Inject
+	@EJB
 	private UserDao userDao;
 
-	@Inject
+	@EJB
 	private UserDTOMapper userMapper;
 
 	public void saveNewUser(final String firstName, final String lastName) {
