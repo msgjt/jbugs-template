@@ -38,17 +38,21 @@ public abstract class AbstractIntegrationTest {
 
 	@Deployment
 	public static Archive<?> createDeploymentPackage() throws IOException {
-		File[] ejbDependencies = Maven.resolver().loadPomFromFile("pom.xml").importRuntimeDependencies().resolve()
+		final File[] ejbDependencies = Maven.resolver().loadPomFromFile("pom.xml").importRuntimeDependencies().resolve()
 				.withTransitivity().asFile();
 
 		final JavaArchive ejbJar = ShrinkWrap.create(JavaArchive.class, "ejb-jar.jar") //
-				.addPackages(true, getEjbPackages());
+				.addPackages(true, getEjbPackages()).addAsManifestResource("beans.xml");
+
+		System.out.println(ejbJar.toString(true));
 
 		final WebArchive testWar = ShrinkWrap.create(WebArchive.class, "test.war").addAsLibraries(ejbDependencies)
-				.addAsLibrary(ejbJar);
+				.addAsLibrary(ejbJar).addAsWebInfResource("beans.xml");
+		System.out.println(testWar.toString(true));
 
 		final EnterpriseArchive ear = ShrinkWrap.create(EnterpriseArchive.class)
 				.setApplicationXML("test-application.xml").addAsModule(testWar);
+		System.out.println(ear.toString(true));
 
 		return ear;
 	}

@@ -3,6 +3,7 @@ package edu.msg.ro.business.user.service;
 import java.util.List;
 
 import javax.ejb.EJB;
+import javax.inject.Inject;
 
 import org.jboss.arquillian.junit.InSequence;
 import org.junit.Assert;
@@ -11,8 +12,8 @@ import org.junit.Test;
 import edu.msg.ro.business.AbstractIntegrationTest;
 import edu.msg.ro.business.exception.JBugsBusinessException;
 import edu.msg.ro.business.exception.ObjectNotFoundException;
+import edu.msg.ro.business.user.dao.UserDao;
 import edu.msg.ro.business.user.dto.UserDTO;
-import edu.msg.ro.persistence.user.dao.UserDao;
 import edu.msg.ro.persistence.user.entity.User;
 
 public class UserServiceTest extends AbstractIntegrationTest {
@@ -20,7 +21,7 @@ public class UserServiceTest extends AbstractIntegrationTest {
 	@EJB
 	private UserService sut;
 
-	@EJB
+	@Inject
 	private UserDao userDao;
 
 	@Test

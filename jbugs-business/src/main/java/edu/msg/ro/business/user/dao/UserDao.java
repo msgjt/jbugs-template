@@ -1,8 +1,8 @@
-package edu.msg.ro.persistence.user.dao;
+package edu.msg.ro.business.user.dao;
 
 import java.util.List;
 
-import javax.ejb.Stateless;
+import javax.enterprise.context.Dependent;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
@@ -15,7 +15,7 @@ import edu.msg.ro.persistence.user.entity.User;
  * @author Andrei Floricel, msg systems ag
  *
  */
-@Stateless
+@Dependent
 public class UserDao {
 
 	@PersistenceContext(unitName = "jbugs-persistence")

@@ -1,11 +1,11 @@
 package edu.msg.ro.business.user.dto.mapper;
 
-import javax.ejb.Stateless;
+import javax.enterprise.context.Dependent;
 
 import edu.msg.ro.business.user.dto.UserDTO;
 import edu.msg.ro.persistence.user.entity.User;
 
-@Stateless
+@Dependent
 public class UserDTOMapper {
 
 	public UserDTO mapToDTO(final User userEntity) {
