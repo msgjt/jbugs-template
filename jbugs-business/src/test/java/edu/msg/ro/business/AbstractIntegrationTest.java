@@ -19,9 +19,7 @@ import org.junit.runner.RunWith;
  * <b>Important notes:</b>
  * <ol>
  * <li>The tests are run with a maven build with profile
- * '{@code integration-tests}', <b>on the parent module</b></li>
- * <li>The tests are run with a maven build with profile
- * '{@code integration-tests}'</li>
+ * '{@code payara-remote}', <b>on the parent module</b></li>
  * <li>The payara server has to be manually started before running the
  * integration tests</li>
  * <li>By default the standard jbugs package 'edu.msg.ro' is used as the common
@@ -29,7 +27,7 @@ import org.junit.runner.RunWith;
  * change that.</li>
  * </ol>
  * 
- * @author floricea
+ * @author Andrei Floricel, msg systems ag
  *
  */
 @RunWith(Arquillian.class)

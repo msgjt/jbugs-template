@@ -9,7 +9,6 @@ import org.junit.Test;
 
 import edu.msg.ro.business.AbstractIntegrationTest;
 import edu.msg.ro.business.user.dto.UserDTO;
-import edu.msg.ro.business.user.service.UserService;
 
 public class UserServiceTest extends AbstractIntegrationTest {
 
@@ -18,16 +17,17 @@ public class UserServiceTest extends AbstractIntegrationTest {
 
 	@Test
 	public void testSaveNewUser() {
-		String LASTNAME = "ILIE";
+		String LASTNAME = "Smith";
 
+		// ARRANGE
 		List<UserDTO> userList = sut.getUserByLastName(LASTNAME);
-
 		Assert.assertEquals("No user should exist!", 0, userList.size());
 
+		// ACT
 		sut.saveNewUser("John", LASTNAME);
 
+		// ASSERT
 		userList = sut.getUserByLastName(LASTNAME);
-
 		Assert.assertEquals("Exactly one user should be persisted", 1, userList.size());
 	}
 
