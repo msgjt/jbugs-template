@@ -9,6 +9,12 @@ import javax.persistence.TypedQuery;
 
 import edu.msg.ro.persistence.user.entity.User;
 
+/**
+ * TODO: add javadoc create AbtractDao (findById generic)
+ * 
+ * @author Andrei Floricel, msg systems ag
+ *
+ */
 @Stateless
 public class UserDao {
 
@@ -24,6 +30,10 @@ public class UserDao {
 		query.setParameter("lastName", lastName);
 
 		return query.getResultList();
+	}
+
+	public User findById(final Long id) {
+		return this.em.find(User.class, id);
 	}
 
 }

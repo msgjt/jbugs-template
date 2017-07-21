@@ -100,11 +100,11 @@ public class User extends AbstractEntity {
 		this.password = password;
 	}
 
-	public boolean isActiv() {
+	public boolean isActive() {
 		return active;
 	}
 
-	public void setActiv(final boolean activ) {
+	public void setActive(final boolean activ) {
 		this.active = activ;
 	}
 

@@ -24,14 +24,22 @@ public class UserService {
 		final User newUser = new User();
 		newUser.setFirstName(firstName);
 		newUser.setLastName(lastName);
+		newUser.setActive(true);
 
 		userDao.persistUser(newUser);
 	}
 
 	public List<UserDTO> getUserByLastName(final String lastName) {
-		List<User> users = userDao.getUserByLastName(lastName);
+		final List<User> users = userDao.getUserByLastName(lastName);
 
 		return users.stream().map(userEntity -> userMapper.mapToDTO(userEntity)).collect(Collectors.toList());
+	}
+
+	public boolean deleteUser(final Long userId) {
+		final User user = userDao.findById(userId);
+		user.setActive(false);
+
+		return true;
 	}
 
 }
