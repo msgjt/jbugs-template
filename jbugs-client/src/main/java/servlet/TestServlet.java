@@ -2,24 +2,15 @@ package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.time.LocalDateTime;
-import java.util.List;
 
-import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import edu.msg.ro.business.user.dto.UserDTO;
-import edu.msg.ro.business.user.service.UserService;
-
 @WebServlet(urlPatterns = { "/TestServlet" })
 public class TestServlet extends HttpServlet {
-
-	@EJB
-	private UserService userService;
 
 	/**
 	 * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,11 +28,6 @@ public class TestServlet extends HttpServlet {
 	protected void processRequest(final HttpServletRequest request, final HttpServletResponse response)
 			throws ServletException, IOException {
 
-		final String firstName = "John_" + LocalDateTime.now();
-		userService.saveNewUser(firstName, "Doe");
-
-		final List<UserDTO> doeUsers = userService.getUserByLastName("Doe");
-
 		response.setContentType("text/html;charset=UTF-8");
 		try (PrintWriter out = response.getWriter()) {
 			out.println("<!DOCTYPE html>");
@@ -49,11 +35,8 @@ public class TestServlet extends HttpServlet {
 			out.println("<head>");
 			out.println("<title>Test EJB Bean New</title>");
 			out.println("</head>");
-			out.println("<body>");
+			out.println("<body> hmm");
 			out.println("User with lastname  'Doe' are:<br>");
-			for (final UserDTO user : doeUsers) {
-				out.println(user.toString() + "<br>");
-			}
 
 			out.println("</body>");
 			out.println("</html>");
