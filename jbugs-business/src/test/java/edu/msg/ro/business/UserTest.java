@@ -5,19 +5,20 @@ import javax.ejb.EJB;
 import org.junit.Assert;
 import org.junit.Test;
 
-import edu.msg.ro.persistence.user.entity.User;
+import edu.msg.ro.business.dto.UserDTO;
+import edu.msg.ro.business.ejbs.UserEjb;
 
 public class UserTest extends AbstractIntegrationTest {
 
 	@EJB
-	private SomeEjb someEjb;
+	private UserEjb sut;
 
 	@Test
-	public void testUserCreation() {
-		User createUser = someEjb.createUser();
+	public void testUserEjb_loadUserByLastname() {
+		UserDTO user = sut.getUserByLastname("Mustermann");
 
-		User loadUser = someEjb.loadUser(createUser.getId());
-
-		Assert.assertTrue(true);
+		Assert.assertEquals("Mustermann", user.getLastname());
+		Assert.assertEquals("Max", user.getFirstname());
 	}
+
 }

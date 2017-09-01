@@ -7,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 
-@NamedQuery(name = User.FIND_USER_BY_LASTNAME, query = "SELECT u from User u WHERE u.lastName = :lastName")
+@NamedQuery(name = User.FIND_USER_BY_LASTNAME, query = "SELECT u from User u WHERE u.lastname = :lastname")
 @Entity
 public class User extends AbstractEntity {
 
@@ -18,35 +18,77 @@ public class User extends AbstractEntity {
 	private Long id;
 
 	@Column
-	private String firstName;
+	private String firstname;
 
 	@Column
-	private String lastName;
+	private String lastname;
 
-	@Override
+	@Column
+	private String email;
+
+	@Column
+	private String username;
+
+	@Column
+	private String phoneNumber;
+
+	@Column
+	private boolean active;
+
 	public Long getId() {
-		return this.id;
+		return id;
 	}
 
-	public String getFirstName() {
-		return firstName;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
-	public void setFirstName(final String firstName) {
-		this.firstName = firstName;
+	public String getFirstname() {
+		return firstname;
 	}
 
-	public String getLastName() {
-		return lastName;
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
 	}
 
-	public void setLastName(final String lastName) {
-		this.lastName = lastName;
+	public String getLastname() {
+		return lastname;
 	}
 
-	@Override
-	public String toString() {
-		return "User [id=" + id + "]";
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
 	}
 
 }
