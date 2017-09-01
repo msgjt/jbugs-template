@@ -7,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 
-@NamedQuery(name = User.FIND_USER_BY_LASTNAME, query = "SELECT u from User u WHERE u.lastname = :lastname")
+@NamedQuery(name = "loadAll", query = "SELECT u from User u WHERE u.lastname = :lastname")
 @Entity
 public class User extends AbstractEntity {
 

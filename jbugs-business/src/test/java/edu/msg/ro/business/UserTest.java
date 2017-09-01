@@ -14,11 +14,16 @@ public class UserTest extends AbstractIntegrationTest {
 	private UserEjb sut;
 
 	@Test
-	public void testUserEjb_loadUserByLastname() {
-		UserDTO user = sut.getUserByLastname("Mustermann");
+	public void testUserEjb_createUser() {
+		// arrange
+		UserDTO user = new UserDTO();
+		user.setFirstname("Andrei");
+		user.setLastname("Floricel");
+		UserDTO createdUser = sut.createUser(user);
 
-		Assert.assertEquals("Mustermann", user.getLastname());
-		Assert.assertEquals("Max", user.getFirstname());
+		Assert.assertNotNull(createdUser.getId());
+		Assert.assertEquals("Floricel", user.getLastname());
+		Assert.assertEquals("Andrei", user.getFirstname());
 	}
 
 }
