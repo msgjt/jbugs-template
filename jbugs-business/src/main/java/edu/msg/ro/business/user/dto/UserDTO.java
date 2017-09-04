@@ -1,60 +1,29 @@
-package edu.msg.ro.persistence.user.entity;
+package edu.msg.ro.business.user.dto;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
+import edu.msg.ro.business.common.dto.AbstractDTO;
+import edu.msg.ro.persistence.user.entity.User;
 
 /**
- * Entity for the User.
+ * DTO for {@link User} entity.
  * 
  * @author Andrei Floricel, msg systems ag
  *
  */
-@NamedQuery(name = User.FIND_USER_BY_EMAIL, query = "SELECT u from User u WHERE u.email = :email")
-@Entity
-public class User extends AbstractEntity {
+public class UserDTO extends AbstractDTO {
 
-	public static final String FIND_USER_BY_EMAIL = "User.findUserByEmail";
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-
-	@Column
 	private String firstname;
 
-	@Column
 	private String lastname;
 
-	@Column
 	private String email;
 
-	@Column
 	private String username;
 
-	@Column
 	private String password;
 
-	@Column
 	private String phoneNumber;
 
-	@Column
 	private boolean active;
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public Long getId() {
-		return id;
-	}
 
 	public String getFirstname() {
 		return firstname;
@@ -88,6 +57,14 @@ public class User extends AbstractEntity {
 		this.username = username;
 	}
 
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
@@ -106,7 +83,7 @@ public class User extends AbstractEntity {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + "]";
+		return "UserDTO [id=" + getId() + ", username=" + username + "]";
 	}
 
 }
