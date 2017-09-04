@@ -1,7 +1,9 @@
 package edu.msg.ro.persistence.user.entity;
 
+import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
 
+@MappedSuperclass
 public abstract class AbstractEntity {
 
 	@Version
